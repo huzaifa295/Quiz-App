@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" class="parent">
+        <!-- registration -->
+        <div class="head">
+            <h2>Quiz App</h2>
+        </div>
+        <div class="inputs">
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="email" id="email" placeholder="Enter Email Adress">
+            <input type="text" id="rollNum" placeholder="Enter Roll Number">
+            <input type="text" id="institute" placeholder="Enter Institute">
+
+            <button id="registrationBtn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+        <!-- Quiz -->
+         <div class="information">
+            <h3 id="userName"></h3>
+            <h3 id="userEmail"></h3>
+            <h3 id="userRoll"></h3>
+            <h3 id="userInstitute"></h3>
+         </div>
+         <div class="quizQues" id="quizQues">
+            <h2 id="ques">
+                
+            </h2>
+            <ul id="quesOptions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <button id="nextBtn" onclick="nextQuest()">Next</button>
+         </div>
+         <!-- Result -->
+
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
