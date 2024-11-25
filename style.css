@@ -62,9 +62,14 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
     border: 2px solid red;
     display: flex;
     flex-direction: column;
+    padding: 25px;
     /* align-items: center; */
-    justify-content: space-evenly;
     display: none;
+}
+.information h3{
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffc107c7;
 }
 .quizQues{
     height: 75%;
@@ -88,7 +93,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
     list-style: none;
     font-size: 1.14rem;
     line-height: 40px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .quizQues ul{
     margin-top: 40px;
@@ -101,4 +106,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
     color: white;
     border: none;
     cursor: pointer;
+}
+#nextBtn{
+    display: none;
 }

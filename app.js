@@ -7,23 +7,26 @@ var quizQues = document.querySelector(".quizQues");
 var ques=document.getElementById('ques')
 var quesOption = document.getElementById('quesOptions').children
 
+var nextBtn=document.getElementById('nextBtn')
+
 function startQuiz() {
+  
+  
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var rollNum = document.getElementById("rollNum").value;
+  var institute = document.getElementById("institute").value;
+  
+  // if(!name || !email || !rollNum || !institute){
+  //   alert('Fields are required')
+  //   return
+  // }
+  
   head.style.display = "none";
   inputs.style.display = "none";
-
   information.style.display = "block";
   quizQues.style.display = "block";
-
-  var name = document.getElementById("name");
-  var email = document.getElementById("email");
-  var rollNum = document.getElementById("rollNum");
-  var institute = document.getElementById("institute");
-
-//   if(!name || !email || !rollNum || !institute){
-//     alert('Fields are required')
-//     return
-// }
-
+  
   var userName = document.getElementById("userName");
   var userEmail = document.getElementById("userEmail");
   var userRoll = document.getElementById("userRoll");
@@ -78,7 +81,21 @@ var QuizQues=[
       }
 ]
 
+
+for(var liOption of quesOption){
+  liOption.setAttribute('onclick', 'selectedOption(this)')
+  liOption.style.cursor='pointer'
+}
+
 function nextQuest(){
+
+  for(var liOption of quesOption){
+    // liOption.setAttribute('onclick', 'selectedOption(this)')
+    liOption.style.cursor='pointer'
+  } 
+
+  nextBtn.style.display='none'
+
     if(quesCount<quesOption.length-1){
         quesCount++
         ques.innerHTML = QuizQues[quesCount].question
@@ -91,22 +108,24 @@ function nextQuest(){
     }
 }
 
-for(var i=0; i<quesOption.length ;i++){
-    console.log(quesOption[i])
-    // quesOption[i].className = 'cursor-pointer'
-    quesOption[i].setAttribute('onclick', 'selectedOption(this)')
-  }
 
 function selectedOption(ele){
+
+
+
     if(ele.innerHTML==QuizQues[quesCount].answer){
+      // ele.style.pointerEvents='none'
       ele.style.color='green'
-      ele.style.pointerEvents='none'
     }else{
-        ele.style.color='red'
+      // ele.style.pointerEvents='none'
+      ele.style.color='red'
     }
 
 
-    for(var ChoseOption of quesOption){
-      ChoseOption.style.pointerEvent='none'
+    for(var liOption of quesOption){
+      liOption.style.pointerEvents = "none"
 }
+
+nextBtn.style.display='block'
+
 }
