@@ -17,10 +17,10 @@ function startQuiz() {
   var rollNum = document.getElementById("rollNum").value;
   var institute = document.getElementById("institute").value;
   
-  // if(!name || !email || !rollNum || !institute){
-  //   alert('Fields are required')
-  //   return
-  // }
+  if(!name || !email || !rollNum || !institute){
+    alert('Fields are required')
+    return
+  }
   
   head.style.display = "none";
   inputs.style.display = "none";
@@ -90,8 +90,8 @@ for(var liOption of quesOption){
 function nextQuest(){
 
   for(var liOption of quesOption){
-    // liOption.setAttribute('onclick', 'selectedOption(this)')
-    liOption.style.cursor='pointer'
+    // liOption.style.cursor='pointer'
+    liOption.classList.remove('colorRed','colorGreen','pointerEvent')
   } 
 
   nextBtn.style.display='none'
@@ -114,16 +114,14 @@ function selectedOption(ele){
 
 
     if(ele.innerHTML==QuizQues[quesCount].answer){
-      // ele.style.pointerEvents='none'
-      ele.style.color='green'
+      ele.setAttribute('class','colorGreen')
     }else{
-      // ele.style.pointerEvents='none'
-      ele.style.color='red'
+      ele.setAttribute('class','colorRed')
     }
 
 
     for(var liOption of quesOption){
-      liOption.style.pointerEvents = "none"
+      liOption.classList.add('pointerEvent')
 }
 
 nextBtn.style.display='block'

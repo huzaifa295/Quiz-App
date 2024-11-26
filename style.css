@@ -59,8 +59,8 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 .information{
     height: 25%;
     width: 100%;
-    border: 2px solid red;
     display: flex;
+    border-bottom: 1px solid gray;
     flex-direction: column;
     padding: 25px;
     /* align-items: center; */
@@ -74,7 +74,6 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 .quizQues{
     height: 75%;
     width: 100%;
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     /* justify-content: space-evenly; */
@@ -109,4 +108,13 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 }
 #nextBtn{
     display: none;
+}
+.colorRed{
+    color: red;
+}
+.colorGreen{
+    color: green;
+}
+.pointerEvent{
+    pointer-events: none;
 }
